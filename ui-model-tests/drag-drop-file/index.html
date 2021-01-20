@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="materialize.min.css" media="screen,projection" />
+
+		<!--Import Font Awesome Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" />
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<style>
+			.chat {
+				border-radius: 10px;
+				padding: 20px;
+				margin: 20px;
+				max-width: 400px;
+			}
+
+			.chat p {
+				background-color: inherit;
+				margin: 0;
+			}
+
+			.client-chat {
+				color: white !important;
+				background-color: #413ecc;
+				margin-left: auto;
+			}
+
+			.recipient-chat {
+				color: black !important;
+				background-color: #dfdfdf;
+				margin-right: auto;
+			}
+        </style>
+	</head>
+
+	<body class="container">
+		<div class="history section">
+			<div class="chat client-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+
+			<div class="chat recipient-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+
+			<div class="chat client-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+
+			<div class="chat recipient-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+
+			<div class="chat client-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+
+			<div class="chat recipient-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+
+			<div class="chat client-chat">
+				<p>
+					This is a chat so imma send a really long text as an example
+					of just how easyy it is to rant or just type a long
+					paragraph since it is 3am after alland i'm not asleep
+					against myyy better judgmenet because i have things ot do
+					tomorrow so just ignore my lack of any punctuation or proper
+					spelling please lol this is a test
+				</p>
+			</div>
+		</div>
+
+		<div class="edit-toolbar">
+			<form action="#" class="row" style="display: flex; flex-direction: row; align-items: baseline;">
+				<div class="col s10">
+					<div id="edit-message"class="input-field">
+						<textarea id="textarea1" class="materialize-textarea"></textarea>
+						<label for="textarea1">Message</label>
+					</div>
+					<div id="file-insert" class="file-field input-field" style="display: none;">
+						<div class="btn">
+							<span>File</span>
+							<input type="file" multiple>
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="Drag or select one or more files">
+						</div>
+					</div>
+				</div>
+
+				<div class="col s2" style="right: 0;">
+					<div class="fixed-action-btn" style="display: flex; flex-direction: column-reverse; justify-content: center; position: relative;">
+						<button id="fab-button" class="btn-floating btn-large red" style="align-self: center;">
+							<i class="large material-icons">mode_edit</i>
+						</button>
+						<ul id="fab-options" style="position: relative; bottom: 0;">
+							<li><a id="fab-option-btn1" class="fab-option-btn btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+							<!-- <li><a class="fab-option-btn btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li> -->
+							<!-- <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+							<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<style>
+			.edit-toolbar {
+				background-color: white;
+				border-top: 1px solid black;
+				bottom: 0;
+				height: 125px;
+				position: fixed;
+				width: 70%;
+				z-index: 10;
+			}
+
+			.edit-toolbar .col {
+				position: absolute;
+				/* bottom: 100px; */
+			}
+
+			.edit-toolbar .s10 {
+				bottom: 15px;
+				left: 0;
+			}
+
+			.edit-toolbar .s2 {
+				bottom: 15px;
+				right: 0;
+			}
+		</style>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="materialize.min.js"></script>
+        
+        <script src="index.js"></script>
+	</body>
+</html>
