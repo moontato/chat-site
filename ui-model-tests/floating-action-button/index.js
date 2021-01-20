@@ -2,7 +2,7 @@ var options = {
     direction: "top",
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     $(".fixed-action-btn").floatingActionButton(options);
     
     $(".fab-option-btn:nth-child(1)").click(() => {
