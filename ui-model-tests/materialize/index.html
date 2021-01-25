@@ -25,10 +25,10 @@
 
 		<style>
 			.chat {
-				border-radius: 10px;
-				padding: 20px;
-				margin: 20px;
+				display: inline-block;
+				padding: 15px 20px;
 				max-width: 400px;
+				width: auto;
 			}
 
 			.chat p {
@@ -37,54 +37,114 @@
 			}
 
 			.client-chat {
+				border-radius: 40px 10px 10px 40px;
 				color: white !important;
 				background-color: #413ecc;
-				margin-left: auto;
+				margin: 2px 0 2px auto;
+				float: right;
+			}
+
+			.client-chat.first {
+				margin-top: 5px;
+				border-top-right-radius: 40px;
+			}
+
+			.client-chat.last {
+				border-bottom-right-radius: 40px;
 			}
 
 			.recipient-chat {
+				border-radius: 10px 40px 40px 10px;
 				color: black !important;
 				background-color: #dfdfdf;
-				margin-right: auto;
+				margin: 2px auto 2px 0;
+			}
+
+			.recipient-chat.first {
+				border-top-left-radius: 40px;
+				margin-top: 5px;
+			}
+
+			.recipient-chat.last {
+				border-bottom-left-radius: 40px;
+			}
+
+			.history tr {
+				border-style: none;
+				padding: 0;
+			}
+
+			.history td {
+				padding: 0;
 			}
 		</style>
 	</head>
 
 	<body class="container">
+
 		<div class="history section">
-			<div class="chat client-chat">
-				<p>
-					This is a chat so imma send a really long text as an example
-					of just how easyy it is to rant or just type a long
-					paragraph since it is 3am after alland i'm not asleep
-					against myyy better judgmenet because i have things ot do
-					tomorrow so just ignore my lack of any punctuation or proper
-					spelling please lol this is a test
-				</p>
-			</div>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<span class="chat recipient-chat first last">
+								<p>
+									This is a random paragraph of text I made up a minute ago so as to demonstrate my proficiency in writing
+									bullcrap. Aka, just a way for me to test out this ui design.
+								</p>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="chat client-chat first">
+								<p>
+									This is a random paragraph of text I made up a minute ago so as to demonstrate my proficiency in writing
+								</p>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="chat client-chat last">
+								<p>
+									This is a random paragraph of text I made up a minute ago so as to demonstrate my proficiency in writing
+									bullcrap. Aka, just a way for me to test out this ui design.
+								</p>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="chat recipient-chat first">
+								<p>
+									K then
+								</p>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="chat recipient-chat">
+								<p>
+									Ttyl
+								</p>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="chat recipient-chat last">
+								<p>
+									Byeeeeeeeeeeeeeeeee
+								</p>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div><!-- Chat History -->
 
-			<div class="chat recipient-chat">
-				<p>
-					This is a chat so imma send a really long text as an example
-					of just how easyy it is to rant or just type a long
-					paragraph since it is 3am after alland i'm not asleep
-					against myyy better judgmenet because i have things ot do
-					tomorrow so just ignore my lack of any punctuation or proper
-					spelling please lol this is a test
-				</p>
-			</div>
-
-			<div class="chat client-chat">
-				<p>
-					This is a chat so imma send a really long text as an example
-					of just how easyy it is to rant or just type a long
-					paragraph since it is 3am after alland i'm not asleep
-					against myyy better judgmenet because i have things ot do
-					tomorrow so just ignore my lack of any punctuation or proper
-					spelling please lol this is a test
-				</p>
-			</div>
-		</div>
 		<div class="edit-box section">
 			<form action="#" class="col s12">
 				<div class="row">
