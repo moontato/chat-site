@@ -7,12 +7,32 @@
 		<meta name="viewport" content="width=device-width" />
 
 		<!-- a grid framework in 250 bytes? are you kidding me?! -->
-		<link rel="stylesheet" href="css/grid.css" />
+		<!-- <link rel="stylesheet" href="css/grid.css" /> -->
 
 		<!-- all the important responsive layout stuff -->
 		<style>
-			.container {
-				max-width: 90em;
+			/* Dead Simple Grid (c) 2015 Vladimir Agafonkin */
+
+			.row .row {
+				margin: 0 -1.5em;
+			}
+
+			.col {
+				padding: 0 1.5em;
+			}
+
+			.row:after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+
+			@media only screen {
+				.col {
+					float: left;
+					width: 100%;
+					box-sizing: border-box;
+				}
 			}
 
 			/* you only need width to set up columns; all columns are 100%-width by default, so we start
@@ -53,91 +73,301 @@
 		<!-- general boring stuff and some visual tweaks -->
 		<link rel="stylesheet" href="css/screen.css" />
 	</head>
-	<body>
-		<div class="container">
-			<div class="row col">
-				<h1>Chatting Y'all</h1>
-			</div>
+	<body class="row">
+		<nav class="col">
 
-			<div class="row">
-				<div class="col sidebar">
-					<h2>Conversations</h2>
-					
-				</div>
-
-				<div class="col content">
-					<h2>Person I'm supposedly talking to</h2>
-
-					<div class="col">
-						<div class="row">
-							<div class="col">Text</div>
-						</div>
-						<div class="row">
-							<div class="row">Goes</div>
-						</div>
-						<div class="row">
-							<div class="row">Here</div>
-						</div>
-						<!-- <div class="col info">
-							<h4>Info Block One</h4>
+		</nav>
+		<aside class="col">
+			<table id="conversation-bar">
+				<thead>
+					<h5>Chats</h5>
+				</thead>
+				<tbody>
+					<tr class="conversation">
+						<div>
+							<h6>
+								Person I'm Talking To
+							</h6>
 							<p>
-								Lorem ipsum dolor sit amet, consectetuer
-								adipiscing elit. Aenean commodo ligula eget
-								dolor. Aenean massa. Cum sociis natoque
-								penatibus et m. Lorem ipsum dolor sit amet,
-								consectetuer adipiscing elit. Aenean commodo
-								ligula eget dolor.
+								Last chat that was sent...
 							</p>
 						</div>
-
-						<div class="col info">
-							<h4>Info Block Two</h4>
+					</tr>
+					<tr class="conversation">
+						<div>
+							<h6>
+								Person I'm Talking To
+							</h6>
 							<p>
-								Lorem ipsum dolor sit amet, consectetuer
-								adipiscing elit. Aenean commodo ligula eget
-								dolor. Aenean massa. Cum sociis natoque
-								penatibus et m. Lorem ipsum dolor sit amet,
-								consectetuer adipiscing elit. Aenean commodo
-								ligula eget dolor.
+								Last chat that was sent...
 							</p>
-						</div> -->
-					</div>
-
-					<!-- <p class="social">
-						<iframe
-							src="http://ghbtns.com/github-btn.html?user=mourner&amp;repo=dead-simple-grid&amp;type=watch&amp;count=true"
-							width="84"
-							height="20"
-						></iframe>
-						<iframe
-							src="http://ghbtns.com/github-btn.html?user=mourner&amp;repo=dead-simple-grid&amp;type=fork&amp;count=true"
-							width="84"
-							height="20"
-						></iframe>
-						<a
-							href="https://twitter.com/share"
-							class="twitter-share-button"
-							data-url="https://github.com/mourner/dead-simple-grid"
-							data-text="Dead Simple Grid — a 250-byte responsive CSS grid framework that is just that. Dead simple."
-							data-related="LeafletJS"
-							>Tweet</a
-						>
-					</p>
-					<script>
-						!(function (d, s, id) {
-							var js,
-								fjs = d.getElementsByTagName(s)[0];
-							if (!d.getElementById(id)) {
-								js = d.createElement(s);
-								js.id = id;
-								js.src =
-									"http://platform.twitter.com/widgets.js";
-								fjs.parentNode.insertBefore(js, fjs);
-							}
-						})(document, "script", "twitter-wjs");
-					</script> -->
+						</div>
+					</tr>
+					<tr class="conversation">
+						<div>
+							<h6>
+								Person I'm Talking To
+							</h6>
+							<p>
+								Last chat that was sent...
+							</p>
+						</div>
+					</tr>
+					<tr class="conversation">
+						<div>
+							<h6>
+								Person I'm Talking To
+							</h6>
+							<p>
+								Last chat that was sent...
+							</p>
+						</div>
+					</tr>
+				</tbody>
+			</table>
+		</aside>
+		<main class="col">
+			<div class="chat-ui">
+				<div class="history section">
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<span class="chat recipient-chat first last">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+											bullcrap. Aka, just a way for me to test out this ui design.
+										</p>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat client-chat first">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat client-chat last">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+											bullcrap. Aka, just a way for me to test out this ui design.
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat first">
+										<p>
+											K then
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat">
+										<p>
+											Ttyl
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat last">
+										<p>
+											Byeeeeeeeeeeeeeeeee
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="chat recipient-chat first last">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+											bullcrap. Aka, just a way for me to test out this ui design.
+										</p>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat client-chat first">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat client-chat last">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+											bullcrap. Aka, just a way for me to test out this ui design.
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat first">
+										<p>
+											K then
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat">
+										<p>
+											Ttyl
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat last">
+										<p>
+											Byeeeeeeeeeeeeeeeee
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="chat recipient-chat first last">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+											bullcrap. Aka, just a way for me to test out this ui design.
+										</p>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat client-chat first">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat client-chat last">
+										<p>
+											This is a random paragraph of text I made up a minute ago so as to demonstrate
+											my
+											proficiency in writing
+											bullcrap. Aka, just a way for me to test out this ui design.
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat first">
+										<p>
+											K then
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat">
+										<p>
+											Ttyl
+										</p>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="chat recipient-chat last">
+										<p>
+											Byeeeeeeeeeeeeeeeee
+										</p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- Chat History -->
+	
+				<div class="edit-toolbar">
+					<form action="#" class="row" style="display: flex; flex-direction: row; align-items: baseline;">
+						<div class="col s10">
+							<div id="edit-message" class="input-field">
+								<textarea id="textarea1" class="materialize-textarea"></textarea>
+								<label for="textarea1">Message</label>
+							</div>
+							<div id="file-insert" class="file-field input-field" style="display: none;">
+								<div class="btn">
+									<span>File</span>
+									<input type="file" multiple>
+								</div>
+								<div class="file-path-wrapper">
+									<input class="file-path validate" type="text"
+										placeholder="Drag or select one or more files">
+								</div>
+							</div>
+						</div>
+	
+						<div class="col s2" style="right: 0;">
+							<div class="fixed-action-btn"
+								style="display: flex; flex-direction: column-reverse; justify-content: center; position: relative;">
+								<button id="fab-button" class="btn-floating btn-large red" style="align-self: center;">
+									<i class="large material-icons">mode_edit</i>
+								</button>
+								<ul id="fab-options" style="position: relative; bottom: 0;">
+									<li><a id="fab-option-btn1" class="fab-option-btn btn-floating red"><i
+												class="material-icons">insert_chart</i></a></li>
+									<!-- <li><a class="fab-option-btn btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li> -->
+									<!-- <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li> -->
+									<!-- <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
+								</ul>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
-		</div>
+		</main>
+	
+		<!--JavaScript at end of body for optimized loading-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+			integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+			crossorigin="anonymous"></script>
+	
+		<script type="text/javascript" src="materialize.min.js"></script>
+	
+		<script src="index.js"></script>
 	</body>
 </html>

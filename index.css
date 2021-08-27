@@ -1,3 +1,29 @@
+body {
+    display: flex;
+}
+
+/* Chat History */
+main {
+    overflow-y: scroll;
+}
+
+.chat-ui {
+    padding: 0 30px;
+}
+
+.history {
+    margin: 0 30px 125px 30px;
+}
+
+.history tr {
+    border-style: none;
+    padding: 0;
+}
+
+.history td {
+    padding: 0;
+}
+
 .chat {
     display: inline-block;
     padding: 15px 20px;
@@ -43,22 +69,13 @@
     border-bottom-left-radius: 40px;
 }
 
-.history tr {
-    border-style: none;
-    padding: 0;
-}
-
-.history td {
-    padding: 0;
-}
-
 .edit-toolbar {
     background-color: white;
     border-top: 1px solid black;
     bottom: 0;
     height: 125px;
     position: fixed;
-    width: 70%;
+    width: 100%;
     z-index: 10;
 }
 
@@ -76,3 +93,6 @@
     bottom: 15px;
     right: 0;
 }
+
+/* Sidebar */
+
